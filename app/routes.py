@@ -19,7 +19,7 @@ def create_post():
 @bp.route('', methods=['GET'])
 def list_posts():
     posts = Post.query.all()
-    return jsonify([{"id": p.id, "title": p.title, "content": p.contentright } for p in posts])
+    return jsonify([{"id": p.id, "title": p.title, "content": p.content } for p in posts])
 
 @bp.route('/<int:post_id>', methods=['GET'])
 def get_post(post_id:int):
